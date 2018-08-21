@@ -37,11 +37,17 @@ public class OpenSettings extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void openSystemSettings() {
+    public void openSettingFingerprint() {
         final Intent i = new Intent();
-        i.setAction(Settings.ACTION_SETTINGS);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        reactContext.startActivity(i);
+        if(android.os.Build.VERSION.SDK_INT < 28) {
+          i.setAction(Settings.ACTION_SETTINGS);
+          i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          reactContext.startActivity(i);
+        } else {
+          i.setAction(Settings.ACTION_FINGERPRINT_ENROLL);
+          i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          reactContext.startActivity(i);
+        }
     }
     //endregion
 }
