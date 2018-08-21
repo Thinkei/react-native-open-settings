@@ -17,7 +17,7 @@ RCT_EXPORT_METHOD(openSettings) {
 }
 
 RCT_EXPORT_METHOD(openSettingFingerprint) {
-  if(@available(iOS, 10, *)) {
+  if (@available(iOS 10, *)) {
   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"App-Prefs:root=TOUCHID_PASSCODE"]];
   } else {
   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=TOUCHID_PASSCODE"]];
