@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: react-native-open-settings
+  tags:
+    - external
+    - fork
+    - public
+    - java
+  annotations:
+    github.com/project-slug: Thinkei/react-native-open-settings
+spec:
+  type: library
+  system: core-technology
+  lifecycle: production
